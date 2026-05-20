@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import CountryCodeSelect from "@/components/CountryCodeSelect";
+import { notifyLead } from "@/lib/notify";
 
 const API = "https://crm.tecaudex.com/api/pk/websiteleads";
 
@@ -30,6 +31,12 @@ export default function Hero() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, phone: `${countryCode} ${form.phone}`, message: form.service }),
+      });
+      notifyLead({
+        Source: "Hero Form",
+        Name: form.name,
+        Phone: `${countryCode} ${form.phone}`,
+        Service: form.service,
       });
     } catch {}
     setLoading(false);

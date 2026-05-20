@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import CountryCodeSelect from "@/components/CountryCodeSelect";
+import { notifyLead } from "@/lib/notify";
 
 const API = "https://crm.tecaudex.com/api/pk/websiteleads";
 
@@ -39,6 +40,14 @@ export default function Contact() {
         body: JSON.stringify({ ...form, phone: `${countryCode} ${form.phone}` }),
       });
       if (!res.ok) throw new Error("server_error");
+      notifyLead({
+        Source: "Contact Form",
+        Name: form.name,
+        Email: form.email,
+        Phone: `${countryCode} ${form.phone}`,
+        Service: form.service,
+        Message: form.message,
+      });
       router.push("/thank-you");
     } catch {
       setError("Something went wrong. Please try again or reach us on WhatsApp.");
