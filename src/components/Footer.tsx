@@ -39,7 +39,7 @@ const serviceLinks = [
 ];
 
 const companyLinks = [
-  { label: "About Us", href: "#about" },
+  { label: "About Us", href: "/about" },
   { label: "Our Process", href: "#process" },
   { label: "Contact", href: "#contact" },
 ];
