@@ -10,7 +10,7 @@ const clients = [
   {
     name: "Etihad Town",
     logoUrl: "https://etihadtown.com.pk/wp-content/uploads/2024/01/logo.png",
-    industry: "Real Estate",
+    industry: "Strategic Partner",
   },
   {
     name: "Logo Shoes",
@@ -34,7 +34,7 @@ const clients = [
     industry: "Plastics & Manufacturing",
   },
   {
-    name: "Multanust University",
+    name: "MUST University",
     logoUrl: "https://framerusercontent.com/images/HnDLdDZjdAZMpkFdRte6nEPHg.png",
     industry: "Education",
   },
@@ -50,7 +50,7 @@ const clients = [
     industry: "Education",
   },
   {
-    name: "Ravi Floor Mills",
+    name: "Ravi Mills",
     logoUrl: null,
     initials: "RF",
     industry: "Food & Agriculture",
