@@ -19,8 +19,7 @@ const clients = [
   },
   {
     name: "Union Bricks",
-    logoUrl: null,
-    initials: "UB",
+    logoUrl: "/unionbricks.jpg",
     industry: "Construction",
   },
   {
