@@ -50,10 +50,15 @@ const clients = [
     industry: "Education",
   },
   {
-    name: "Ravi Mills",
+    name: "Alfatah Glass & Aluminium",
     logoUrl: null,
-    initials: "RF",
-    industry: "Food & Agriculture",
+    initials: "AG",
+    industry: "Glass & Aluminium",
+  },
+  {
+    name: "Hafiz Sajjad Motors",
+    logoUrl: "https://hafizsajjadmotors.pk/wp-content/uploads/2024/12/HSM-Logo-1.webp",
+    industry: "Automotive",
   },
   {
     name: "Sakura Group",
