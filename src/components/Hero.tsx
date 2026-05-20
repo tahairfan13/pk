@@ -133,7 +133,7 @@ export default function Hero() {
                     disabled={loading}
                     className="w-full bg-[#ED1A3B] hover:bg-[#c9162f] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-3 rounded-full transition-colors text-sm flex items-center justify-center gap-2"
                   >
-                    {loading ? "Sending…" : "Request a Free Call"}
+                    {loading ? "Sending…" : "Submit"}
                     {!loading && <ArrowUpRight size={15} />}
                   </button>
                 </form>
