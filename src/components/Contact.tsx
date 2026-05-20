@@ -73,10 +73,10 @@ export default function Contact() {
                   <div>
                     <p className="text-white/60 text-xs mb-1">Phone / WhatsApp</p>
                     <a
-                      href="tel:+923001234567"
+                      href="tel:+923004018239"
                       className="text-white hover:text-[#ED1A3B] transition-colors text-sm"
                     >
-                      +92 300 000 0000
+                      +92 300 401 8239
                     </a>
                   </div>
                 </li>
