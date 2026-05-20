@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "fivestarfoam.com.pk" },
       { protocol: "https", hostname: "alkhairenterprises.pk" },
       { protocol: "https", hostname: "www.logoofficial.com" },
+      { protocol: "https", hostname: "www.tum.edu.pk" },
     ],
   },
 };

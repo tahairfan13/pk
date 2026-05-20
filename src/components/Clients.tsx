@@ -23,14 +23,28 @@ const clients = [
   },
   {
     name: "Times University",
-    logoUrl: null,
+    logoUrl: "https://www.tum.edu.pk/images/logo.png",
     industry: "Education",
     service: "Mobile App",
+  },
+  {
+    name: "Zafar Group",
+    logoUrl: null,
+    initials: "ZG",
+    industry: "Conglomerate",
+    service: "Odoo ERP",
+  },
+  {
+    name: "Ravi Floor Mills",
+    logoUrl: null,
+    initials: "RF",
+    industry: "Food & Agriculture",
+    service: "Odoo ERP",
   },
 ];
 
 const stats = [
-  { value: "4", label: "Industry Verticals" },
+  { value: "5+", label: "Industry Verticals" },
   { value: "PKR B+", label: "Client Revenue Managed" },
   { value: "100%", label: "On-Time Delivery" },
 ];
@@ -55,7 +69,7 @@ export default function Clients() {
         </div>
 
         {/* Client cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
           {clients.map((c) => (
             <div
               key={c.name}
@@ -73,12 +87,9 @@ export default function Clients() {
                     unoptimized
                   />
                 ) : (
-                  <div className="flex flex-col items-center gap-1">
-                    <div className="w-10 h-10 rounded-full bg-[#ED1A3B] flex items-center justify-center mb-1">
-                      <span className="font-heading font-bold text-white text-sm tracking-tight">TU</span>
-                    </div>
-                    <span className="text-[#939393] text-xs font-semibold uppercase tracking-widest">
-                      Times University
+                  <div className="w-14 h-14 rounded-full bg-[#ED1A3B] flex items-center justify-center">
+                    <span className="font-heading font-bold text-white text-base tracking-tight">
+                      {"initials" in c ? c.initials : ""}
                     </span>
                   </div>
                 )}
