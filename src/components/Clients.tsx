@@ -6,52 +6,44 @@ const clients = [
     logoUrl:
       "https://fivestarfoam.com.pk/wp-content/uploads/2025/03/cropped-logo.png",
     industry: "Manufacturing",
-    service: "ERP Implementation",
   },
   {
     name: "Etihad Town",
     logoUrl: "https://etihadtown.com.pk/wp-content/uploads/2024/01/logo.png",
     industry: "Real Estate",
-    service: "ERP Implementation",
   },
   {
     name: "Riphah University",
     logoUrl: "https://jrcrs.riphah.edu.pk/wp-content/uploads/2017/05/RIU-logo.png",
     industry: "Education",
-    service: "Mobile App",
   },
   {
     name: "Logo Shoes",
     logoUrl:
       "https://www.logoofficial.com/cdn/shop/files/LOGO_blk.png?v=1715945255",
     industry: "Retail & Fashion",
-    service: "Mobile App",
   },
   {
     name: "Times University",
     logoUrl: "https://www.tum.edu.pk/images/logo.png",
     darkLogoBg: true,
     industry: "Education",
-    service: "Mobile App",
   },
   {
     name: "Zafar Group",
     logoUrl: "/zafar-group.jpg",
     industry: "Catering & Events",
-    service: "ERP Implementation",
   },
   {
     name: "Ravi Floor Mills",
     logoUrl: null,
     initials: "RF",
     industry: "Food & Agriculture",
-    service: "ERP Implementation",
   },
   {
     name: "TurkPlast",
     logoUrl: "https://www.turkplast.info/admin/dist/tp-logo-removebg-preview.png",
     industry: "Plastics & Manufacturing",
-    service: "ERP Implementation",
   },
 ];
 
@@ -113,12 +105,7 @@ export default function Clients() {
               <p className="font-heading font-bold text-[#1B1B1B] text-sm mb-1">
                 {c.name}
               </p>
-              <p className="text-[#939393] text-xs mb-3">{c.industry}</p>
-
-              {/* Service tag */}
-              <span className="inline-block bg-[#ED1A3B]/8 text-[#ED1A3B] text-[11px] font-semibold px-3 py-1 rounded-full border border-[#ED1A3B]/20">
-                {c.service}
-              </span>
+              <p className="text-[#939393] text-xs">{c.industry}</p>
             </div>
           ))}
         </div>
