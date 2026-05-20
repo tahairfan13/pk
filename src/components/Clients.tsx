@@ -55,6 +55,11 @@ const clients = [
     initials: "RF",
     industry: "Food & Agriculture",
   },
+  {
+    name: "Sakura Group",
+    logoUrl: "https://sakuragroup.pk/wp-content/uploads/2024/12/logo.png",
+    industry: "Retail & Distribution",
+  },
 ];
 
 const stats = [
@@ -77,8 +82,10 @@ export default function Clients() {
             Trusted by Pakistan&apos;s Leading Brands
           </h2>
           <p className="text-[#939393] text-lg leading-relaxed">
-            A selection of prominent names from our portfolio — spanning manufacturing,
-            retail, education, real estate, and more.
+            A snapshot of the local Pakistani businesses we&apos;ve built for —
+            household names and growing companies across manufacturing, retail,
+            real estate, education, and more. These are the clients who trusted
+            us to digitise, automate, and scale their operations.
           </p>
         </div>
 
