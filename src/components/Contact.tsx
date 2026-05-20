@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
+const API = "https://crm.tecaudex.com/api/pk/websiteleads";
+
 export default function Contact() {
   const [form, setForm] = useState({
     name: "",
@@ -12,6 +14,8 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -21,10 +25,23 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Wire to your backend / email service
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch(API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("server_error");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again or reach us on WhatsApp.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -206,12 +223,16 @@ export default function Contact() {
                   />
                 </div>
 
+                {error && (
+                  <p className="text-sm text-red-500 -mt-1">{error}</p>
+                )}
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 bg-[#ED1A3B] hover:bg-[#c9162f] text-white font-semibold px-7 py-3.5 rounded-full transition-colors text-sm mt-1"
+                  disabled={loading}
+                  className="inline-flex items-center justify-center gap-2 bg-[#ED1A3B] hover:bg-[#c9162f] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold px-7 py-3.5 rounded-full transition-colors text-sm mt-1"
                 >
-                  Send Message
-                  <Send size={15} />
+                  {loading ? "Sending…" : "Send Message"}
+                  {!loading && <Send size={15} />}
                 </button>
               </form>
             )}

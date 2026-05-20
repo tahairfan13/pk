@@ -6,7 +6,7 @@ import Process from "@/components/Process";
 import Clients from "@/components/Clients";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import WhatsAppWidget from "@/components/WhatsAppWidget";
+import FloatingActions from "@/components/FloatingActions";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      <WhatsAppWidget />
+      <FloatingActions />
     </>
   );
 }
