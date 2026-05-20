@@ -51,8 +51,7 @@ const clients = [
   },
   {
     name: "Alfatah Glass & Aluminium",
-    logoUrl: null,
-    initials: "AG",
+    logoUrl: "/alfatah-logo.jpg",
     industry: "Glass & Aluminium",
   },
   {
