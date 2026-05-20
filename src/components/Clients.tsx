@@ -116,7 +116,7 @@ export default function Clients() {
                 ) : (
                   <div className="w-14 h-14 rounded-full bg-[#ED1A3B] flex items-center justify-center">
                     <span className="font-heading font-bold text-white text-base tracking-tight">
-                      {"initials" in c ? c.initials : ""}
+                      {"initials" in c ? String(c.initials) : ""}
                     </span>
                   </div>
                 )}
