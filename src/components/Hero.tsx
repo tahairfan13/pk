@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, Send } from "lucide-react";
 import { useState } from "react";
+import CountryCodeSelect from "@/components/CountryCodeSelect";
 
 const API = "https://crm.tecaudex.com/api/pk/websiteleads";
 
@@ -12,6 +13,7 @@ const stats = [
 
 export default function Hero() {
   const [form, setForm] = useState({ name: "", phone: "", service: "" });
+  const [countryCode, setCountryCode] = useState("+92");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -26,7 +28,7 @@ export default function Hero() {
       await fetch(API, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, message: "Quick enquiry from hero form" }),
+        body: JSON.stringify({ ...form, phone: `${countryCode} ${form.phone}`, message: "Quick enquiry from hero form" }),
       });
     } catch {}
     setLoading(false);
@@ -105,15 +107,18 @@ export default function Hero() {
                     placeholder="Your name"
                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#ED1A3B]/50 transition-colors"
                   />
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    value={form.phone}
-                    onChange={handleChange}
-                    placeholder="Phone / WhatsApp"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#ED1A3B]/50 transition-colors"
-                  />
+                  <div className="flex gap-2">
+                    <CountryCodeSelect value={countryCode} onChange={setCountryCode} dark />
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      value={form.phone}
+                      onChange={handleChange}
+                      placeholder="Phone / WhatsApp"
+                      className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#ED1A3B]/50 transition-colors"
+                    />
+                  </div>
                   <select
                     name="service"
                     required

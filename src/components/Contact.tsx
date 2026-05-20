@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import CountryCodeSelect from "@/components/CountryCodeSelect";
 
 const API = "https://crm.tecaudex.com/api/pk/websiteleads";
 
@@ -13,6 +14,7 @@ export default function Contact() {
     service: "",
     message: "",
   });
+  const [countryCode, setCountryCode] = useState("+92");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -33,7 +35,7 @@ export default function Contact() {
       const res = await fetch(API, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, phone: `${countryCode} ${form.phone}` }),
       });
       if (!res.ok) throw new Error("server_error");
       setSubmitted(true);
@@ -177,14 +179,17 @@ export default function Contact() {
                     <label className="block text-sm font-medium text-[#1B1B1B] mb-1.5">
                       Phone / WhatsApp
                     </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={form.phone}
-                      onChange={handleChange}
-                      placeholder="+92 300 0000000"
-                      className="w-full border border-[#E5E5E5] rounded-lg px-4 py-2.5 text-sm text-[#1B1B1B] placeholder:text-[#D7D7D7] focus:outline-none focus:border-[#ED1A3B] transition-colors"
-                    />
+                    <div className="flex gap-2">
+                      <CountryCodeSelect value={countryCode} onChange={setCountryCode} />
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={form.phone}
+                        onChange={handleChange}
+                        placeholder="300 0000000"
+                        className="flex-1 border border-[#E5E5E5] rounded-lg px-4 py-2.5 text-sm text-[#1B1B1B] placeholder:text-[#D7D7D7] focus:outline-none focus:border-[#ED1A3B] transition-colors"
+                      />
+                    </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-[#1B1B1B] mb-1.5">
