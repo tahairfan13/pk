@@ -31,7 +31,7 @@ const clients = [
     name: "Zafar Group",
     logoUrl: null,
     initials: "ZG",
-    industry: "Conglomerate",
+    industry: "Catering & Events",
     service: "Odoo ERP",
   },
   {
@@ -83,7 +83,7 @@ export default function Clients() {
                     alt={c.name}
                     width={140}
                     height={60}
-                    className="max-h-14 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="max-h-14 w-auto object-contain mx-auto grayscale group-hover:grayscale-0 transition-all duration-300"
                     unoptimized
                   />
                 ) : (
