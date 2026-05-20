@@ -47,7 +47,9 @@ export default function Navbar() {
             Odoo Calculator
           </a>
           <a
-            href="/#contact"
+            href="https://cal.com/tecaudex/discovery-call?duration=30"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[#ED1A3B] hover:bg-[#c9162f] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
           >
             Book a Free Call
@@ -75,7 +77,7 @@ export default function Navbar() {
             Odoo Calculator
           </a>
           <a
-            href="/#contact"
+            href="https://cal.com/tecaudex/discovery-call?duration=30"
             onClick={() => setOpen(false)}
             className="bg-[#ED1A3B] hover:bg-[#c9162f] text-white text-sm font-semibold px-5 py-3 rounded-full text-center transition-colors"
           >

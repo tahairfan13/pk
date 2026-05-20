@@ -119,7 +119,9 @@ export default function Contact() {
                 Book a free 30-minute discovery call. No obligation.
               </p>
               <a
-                href="mailto:hello@tecaudex.com"
+                href="https://cal.com/tecaudex/discovery-call?duration=30"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#ED1A3B] hover:bg-[#c9162f] text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm w-full justify-center"
               >
                 Schedule a Call
