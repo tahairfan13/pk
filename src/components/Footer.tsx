@@ -53,9 +53,10 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <span className="font-heading font-bold text-lg block mb-4">Tecaudex</span>
             <p className="text-[#939393] text-sm leading-relaxed mb-6">
-              Pakistan&apos;s technology partner for Odoo ERP implementation, mobile
-              app development, and AI solutions. Outcome-focused. Transparent.
-              Reliable.
+              Born in Lahore, trusted across 10+ countries. We build ERP systems,
+              mobile apps, and AI solutions with a senior team that treats your
+              business like our own — honest pricing, no body-shop, outcomes you
+              can measure.
             </p>
             <div className="flex gap-3">
               {socials.map((s) => (
