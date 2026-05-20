@@ -5,11 +5,6 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const links = [
-  { label: "Odoo Calculator", href: "/odoo-calculator" },
-  { label: "Contact", href: "/#contact" },
-];
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -29,7 +24,7 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 shrink-0">
+        <a href="/" className="flex items-center gap-2 shrink-0">
           <Image
             src="https://www.tecaudex.com/32x32px.png"
             alt="Tecaudex"
@@ -43,31 +38,23 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="text-[#1B1B1B] hover:text-[#ED1A3B] text-sm font-medium transition-colors"
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Desktop actions */}
+        <div className="hidden md:flex items-center gap-3">
           <a
-            href="#contact"
+            href="/odoo-calculator"
+            className="border border-[#E5E5E5] hover:border-[#ED1A3B] hover:text-[#ED1A3B] text-[#1B1B1B] text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
+          >
+            Odoo Calculator
+          </a>
+          <a
+            href="/#contact"
             className="bg-[#ED1A3B] hover:bg-[#c9162f] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
           >
             Book a Free Call
           </a>
         </div>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden p-2 text-[#1B1B1B]"
@@ -79,21 +66,18 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       {open && (
-        <div className="md:hidden bg-white border-t border-[#E5E5E5] px-4 pb-6 pt-4 flex flex-col gap-4">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-[#1B1B1B] hover:text-[#ED1A3B] font-medium py-1 transition-colors"
-            >
-              {l.label}
-            </a>
-          ))}
+        <div className="md:hidden bg-white border-t border-[#E5E5E5] px-4 pb-6 pt-4 flex flex-col gap-3">
           <a
-            href="#contact"
+            href="/odoo-calculator"
             onClick={() => setOpen(false)}
-            className="mt-2 bg-[#ED1A3B] hover:bg-[#c9162f] text-white text-sm font-semibold px-5 py-3 rounded-full text-center transition-colors"
+            className="border border-[#E5E5E5] text-[#1B1B1B] font-medium py-3 px-5 rounded-full text-center text-sm transition-colors"
+          >
+            Odoo Calculator
+          </a>
+          <a
+            href="/#contact"
+            onClick={() => setOpen(false)}
+            className="bg-[#ED1A3B] hover:bg-[#c9162f] text-white text-sm font-semibold px-5 py-3 rounded-full text-center transition-colors"
           >
             Book a Free Call
           </a>
