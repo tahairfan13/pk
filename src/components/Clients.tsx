@@ -47,10 +47,19 @@ const clients = [
   },
 ];
 
-const stats = [
-  { value: "5+", label: "Industry Verticals" },
-  { value: "PKR B+", label: "Client Revenue Managed" },
-  { value: "100%", label: "On-Time Delivery" },
+const pillars = [
+  {
+    value: "Built in Pakistan",
+    label: "Enterprise quality at local rates — no agency markup, no middlemen.",
+  },
+  {
+    value: "24h Response",
+    label: "Every active project gets a guaranteed reply within one business day.",
+  },
+  {
+    value: "Fixed-Price Contracts",
+    label: "Scope locked before we start. No surprise invoices. Ever.",
+  },
 ];
 
 export default function Clients() {
@@ -110,12 +119,15 @@ export default function Clients() {
           ))}
         </div>
 
-        {/* Stats strip */}
-        <div className="bg-[#1A1A1A] rounded-2xl px-8 py-8 grid sm:grid-cols-3 gap-6 text-center">
-          {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center gap-1">
-              <p className="font-heading font-bold text-3xl text-white">{s.value}</p>
-              <p className="text-[#B8B8B8] text-sm">{s.label}</p>
+        {/* Value pillars strip */}
+        <div className="bg-[#1A1A1A] rounded-2xl px-8 py-8 grid sm:grid-cols-3 gap-px">
+          {pillars.map((p, i) => (
+            <div
+              key={i}
+              className="flex flex-col gap-2 px-6 py-2 sm:border-r border-white/10 last:border-0"
+            >
+              <p className="font-heading font-bold text-lg text-[#ED1A3B]">{p.value}</p>
+              <p className="text-[#B8B8B8] text-sm leading-relaxed">{p.label}</p>
             </div>
           ))}
         </div>
