@@ -54,7 +54,7 @@ export default function Hero() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#ED1A3B] opacity-[0.05] blur-[140px] pointer-events-none" />
 
       {/* ── Main content ── */}
-      <div className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 lg:px-8 w-full pt-32 pb-16 md:pt-36 md:pb-20">
+      <div className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 lg:px-8 w-full pt-16 pb-16 md:pt-20 md:pb-20">
 
         {/* Decorative large number */}
         <span className="absolute right-6 lg:right-8 top-1/2 -translate-y-1/2 font-heading font-bold text-[160px] md:text-[220px] leading-none text-white/[0.03] select-none pointer-events-none">
