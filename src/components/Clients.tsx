@@ -6,13 +6,13 @@ const clients = [
     logoUrl:
       "https://fivestarfoam.com.pk/wp-content/uploads/2025/03/cropped-logo.png",
     industry: "Manufacturing",
-    service: "Odoo ERP",
+    service: "ERP Implementation",
   },
   {
     name: "Etihad Town",
     logoUrl: "https://etihadtown.com.pk/wp-content/uploads/2024/01/logo.png",
     industry: "Real Estate",
-    service: "Odoo ERP",
+    service: "ERP Implementation",
   },
   {
     name: "Riphah University",
@@ -38,20 +38,20 @@ const clients = [
     name: "Zafar Group",
     logoUrl: "/zafar-group.jpg",
     industry: "Catering & Events",
-    service: "Odoo ERP",
+    service: "ERP Implementation",
   },
   {
     name: "Ravi Floor Mills",
     logoUrl: null,
     initials: "RF",
     industry: "Food & Agriculture",
-    service: "Odoo ERP",
+    service: "ERP Implementation",
   },
   {
     name: "TurkPlast",
     logoUrl: "https://www.turkplast.info/admin/dist/tp-logo-removebg-preview.png",
     industry: "Plastics & Manufacturing",
-    service: "Odoo ERP",
+    service: "ERP Implementation",
   },
 ];
 
