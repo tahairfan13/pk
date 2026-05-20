@@ -24,6 +24,12 @@ export default function Navbar() {
         {/* Desktop actions */}
         <div className="hidden md:flex items-center gap-3">
           <a
+            href="/about"
+            className="text-white/60 hover:text-white text-sm font-medium px-3 py-2 transition-colors"
+          >
+            About
+          </a>
+          <a
             href="/odoo-calculator"
             className="border border-white/20 hover:border-[#ED1A3B] text-white/70 hover:text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
           >
@@ -52,6 +58,13 @@ export default function Navbar() {
       {/* Mobile drawer */}
       {open && (
         <div className="md:hidden bg-[#1A1A1A] border-t border-white/8 px-4 pb-6 pt-4 flex flex-col gap-3">
+          <a
+            href="/about"
+            onClick={() => setOpen(false)}
+            className="text-white/60 font-medium py-3 px-5 text-sm"
+          >
+            About
+          </a>
           <a
             href="/odoo-calculator"
             onClick={() => setOpen(false)}

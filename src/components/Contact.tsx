@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import CountryCodeSelect from "@/components/CountryCodeSelect";
 
@@ -15,7 +16,7 @@ export default function Contact() {
     message: "",
   });
   const [countryCode, setCountryCode] = useState("+92");
-  const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -38,7 +39,7 @@ export default function Contact() {
         body: JSON.stringify({ ...form, phone: `${countryCode} ${form.phone}` }),
       });
       if (!res.ok) throw new Error("server_error");
-      setSubmitted(true);
+      router.push("/thank-you");
     } catch {
       setError("Something went wrong. Please try again or reach us on WhatsApp.");
     } finally {
@@ -131,20 +132,7 @@ export default function Contact() {
 
           {/* Form */}
           <div className="lg:col-span-3 bg-white rounded-2xl p-8 border border-[#E5E5E5]">
-            {submitted ? (
-              <div className="flex flex-col items-center justify-center h-full text-center py-12">
-                <div className="w-14 h-14 rounded-full bg-[#ED1A3B]/10 flex items-center justify-center mb-4">
-                  <Send size={22} className="text-[#ED1A3B]" />
-                </div>
-                <h3 className="font-heading font-bold text-xl text-[#1B1B1B] mb-2">
-                  Message Received!
-                </h3>
-                <p className="text-[#939393]">
-                  We&apos;ll be in touch within 24 hours.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-medium text-[#1B1B1B] mb-1.5">
@@ -242,7 +230,6 @@ export default function Contact() {
                   {!loading && <Send size={15} />}
                 </button>
               </form>
-            )}
           </div>
         </div>
       </div>
