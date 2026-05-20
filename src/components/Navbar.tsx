@@ -6,10 +6,6 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { label: "Services", href: "/#services" },
-  { label: "About", href: "/#about" },
-  { label: "Process", href: "/#process" },
-  { label: "Clients", href: "/#clients" },
   { label: "Odoo Calculator", href: "/odoo-calculator" },
   { label: "Contact", href: "/#contact" },
 ];
