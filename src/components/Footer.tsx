@@ -51,7 +51,7 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <span className="font-heading font-bold text-lg block mb-4">Tecaudex</span>
+            <img src="/tecaudex-logo.svg" alt="Tecaudex" width={130} height={33} className="mb-4 brightness-0 invert" />
             <p className="text-[#939393] text-sm leading-relaxed mb-6">
               Born in Lahore, trusted across 10+ countries. We build ERP systems,
               mobile apps, and AI solutions with a senior team that treats your

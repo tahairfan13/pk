@@ -24,18 +24,14 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 shrink-0">
+        <a href="/" className="shrink-0">
           <Image
-            src="https://www.tecaudex.com/32x32px.png"
+            src="/tecaudex-logo.svg"
             alt="Tecaudex"
-            width={32}
-            height={32}
-            className="rounded"
-            unoptimized
+            width={150}
+            height={38}
+            priority
           />
-          <span className="font-heading font-bold text-xl text-[#1B1B1B]">
-            Tecaudex
-          </span>
         </a>
 
         {/* Desktop actions */}
