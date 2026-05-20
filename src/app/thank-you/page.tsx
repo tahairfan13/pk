@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
@@ -9,41 +10,126 @@ export const metadata: Metadata = {
   description: "We've received your message and will be in touch within 24 hours.",
 };
 
+const nextSteps = [
+  {
+    step: "01",
+    title: "We review your request",
+    desc: "A senior team member reads through your project details — not a bot, not a junior rep.",
+  },
+  {
+    step: "02",
+    title: "You hear from us in 24h",
+    desc: "We reach out with an honest assessment and a clear recommendation on how to move forward.",
+  },
+  {
+    step: "03",
+    title: "We scope it together",
+    desc: "A free discovery call where we align on goals, timeline, and budget — no pressure, no hard sell.",
+  },
+];
+
 export default function ThankYouPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#F5F5F5] flex items-center justify-center px-4 py-24">
-        <div className="max-w-lg w-full text-center">
-          <div className="w-20 h-20 rounded-full bg-[#ED1A3B]/10 flex items-center justify-center mx-auto mb-6">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#ED1A3B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-9 h-9">
-              <path d="M20 6L9 17l-5-5" />
-            </svg>
+      <main className="bg-[#1A1A1A] min-h-screen">
+
+        {/* Hero */}
+        <section className="relative overflow-hidden pt-24 pb-20 px-4">
+          {/* Background glow */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-[#ED1A3B] opacity-[0.06] blur-[120px] pointer-events-none" />
+
+          <div className="relative max-w-2xl mx-auto text-center">
+            {/* Animated checkmark ring */}
+            <div className="relative w-24 h-24 mx-auto mb-8">
+              <div className="absolute inset-0 rounded-full bg-[#ED1A3B]/10 animate-ping" style={{ animationDuration: "2.5s" }} />
+              <div className="relative w-24 h-24 rounded-full bg-[#ED1A3B]/15 border border-[#ED1A3B]/30 flex items-center justify-center">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ED1A3B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+              </div>
+            </div>
+
+            <span className="inline-block mb-4 text-[#ED1A3B] text-xs font-semibold uppercase tracking-widest">
+              Message Received
+            </span>
+            <h1 className="font-heading font-bold text-4xl sm:text-5xl text-white mb-5 leading-tight">
+              You&apos;re in good hands.
+            </h1>
+            <p className="text-white/50 text-lg leading-relaxed max-w-lg mx-auto mb-10">
+              Thank you for reaching out to Tecaudex. We&apos;ve received your details
+              and a senior team member will personally get back to you within
+              <span className="text-white font-medium"> 24 hours</span>.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="https://cal.com/tecaudex/discovery-call?duration=30"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#ED1A3B] hover:bg-[#c9162f] text-white font-semibold px-7 py-3.5 rounded-full transition-colors text-sm"
+              >
+                Can&apos;t wait? Book a free call now
+              </a>
+              <Link
+                href="/"
+                className="border border-white/15 hover:border-white/40 text-white/60 hover:text-white font-semibold px-7 py-3.5 rounded-full transition-colors text-sm"
+              >
+                Back to Home
+              </Link>
+            </div>
           </div>
-          <h1 className="font-heading font-bold text-3xl sm:text-4xl text-[#1B1B1B] mb-4">
-            Message Received!
-          </h1>
-          <p className="text-[#939393] text-lg leading-relaxed mb-10">
-            Thank you for reaching out. One of our team members will review your
-            project details and get back to you within 24 hours.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="https://cal.com/tecaudex/discovery-call?duration=30"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#ED1A3B] hover:bg-[#c9162f] text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm"
-            >
-              Book a Free Call Instead
-            </a>
-            <Link
-              href="/"
-              className="border border-[#1B1B1B]/20 hover:border-[#ED1A3B] text-[#1B1B1B] hover:text-[#ED1A3B] font-semibold px-6 py-3 rounded-full transition-colors text-sm"
-            >
-              Back to Home
-            </Link>
+        </section>
+
+        {/* What happens next */}
+        <section className="py-16 px-4 border-t border-white/8">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-center text-white/40 text-xs font-semibold uppercase tracking-widest mb-10">
+              What happens next
+            </p>
+            <div className="grid sm:grid-cols-3 gap-6">
+              {nextSteps.map((s) => (
+                <div key={s.step} className="bg-white/[0.04] border border-white/8 rounded-2xl p-6">
+                  <span className="font-heading font-bold text-[#ED1A3B] text-3xl leading-none block mb-4">
+                    {s.step}
+                  </span>
+                  <h3 className="font-heading font-bold text-white text-sm mb-2">
+                    {s.title}
+                  </h3>
+                  <p className="text-white/40 text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
+
+        {/* Trust strip */}
+        <section className="py-12 px-4 border-t border-white/8">
+          <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-center">
+            {[
+              { value: "80+", label: "Projects delivered" },
+              { value: "10+", label: "Countries served" },
+              { value: "24h", label: "Response guarantee" },
+            ].map((s) => (
+              <div key={s.label}>
+                <p className="font-heading font-bold text-2xl text-white">{s.value}</p>
+                <p className="text-white/40 text-xs mt-0.5">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Logo */}
+        <section className="py-10 px-4 border-t border-white/8 text-center">
+          <Image
+            src="/tecaudex-logo-dark.svg"
+            alt="Tecaudex"
+            width={130}
+            height={33}
+            className="mx-auto opacity-40"
+          />
+        </section>
+
       </main>
       <Footer />
       <FloatingActions />
