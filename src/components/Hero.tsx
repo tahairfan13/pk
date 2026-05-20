@@ -1,7 +1,8 @@
 "use client";
 
-import { ArrowUpRight, Send } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import CountryCodeSelect from "@/components/CountryCodeSelect";
 
 const API = "https://crm.tecaudex.com/api/pk/websiteleads";
@@ -12,9 +13,9 @@ const stats = [
 ];
 
 export default function Hero() {
+  const router = useRouter();
   const [form, setForm] = useState({ name: "", phone: "", service: "" });
   const [countryCode, setCountryCode] = useState("+92");
-  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (
@@ -32,7 +33,7 @@ export default function Hero() {
       });
     } catch {}
     setLoading(false);
-    setSubmitted(true);
+    router.push("/thank-you");
   };
 
   return (
@@ -85,16 +86,7 @@ export default function Hero() {
 
           {/* Right: quick lead form */}
           <div className="bg-white/[0.04] border border-white/10 rounded-2xl p-7 backdrop-blur-sm">
-            {submitted ? (
-              <div className="flex flex-col items-center justify-center py-8 text-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#ED1A3B]/10 flex items-center justify-center">
-                  <Send size={20} className="text-[#ED1A3B]" />
-                </div>
-                <p className="font-heading font-bold text-white text-lg">We&apos;ll be in touch!</p>
-                <p className="text-white/40 text-sm">Expect a reply within 24 hours.</p>
-              </div>
-            ) : (
-              <>
+            <>
                 <p className="font-heading font-bold text-white text-lg mb-1">Get a Free Quote</p>
                 <p className="text-white/40 text-xs mb-6">No commitment. Just a conversation.</p>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -142,8 +134,7 @@ export default function Hero() {
                     {!loading && <ArrowUpRight size={15} />}
                   </button>
                 </form>
-              </>
-            )}
+            </>
           </div>
         </div>
       </div>
