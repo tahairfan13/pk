@@ -13,9 +13,20 @@ const clients = [
     industry: "Real Estate",
   },
   {
-    name: "Riphah University",
-    logoUrl: "https://jrcrs.riphah.edu.pk/wp-content/uploads/2017/05/RIU-logo.png",
+    name: "Multanust University",
+    logoUrl: "https://framerusercontent.com/images/HnDLdDZjdAZMpkFdRte6nEPHg.png",
     industry: "Education",
+  },
+  {
+    name: "Union Bricks",
+    logoUrl: null,
+    initials: "UB",
+    industry: "Construction",
+  },
+  {
+    name: "Diamond Form",
+    logoUrl: "/diamond-logo.jpg",
+    industry: "Retail",
   },
   {
     name: "Logo Shoes",
