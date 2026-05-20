@@ -24,6 +24,7 @@ const clients = [
   {
     name: "Times University",
     logoUrl: "https://www.tum.edu.pk/images/logo.png",
+    darkLogoBg: true,
     industry: "Education",
     service: "Mobile App",
   },
@@ -77,14 +78,16 @@ export default function Clients() {
               {/* Logo */}
               <div className="w-full h-20 flex items-center justify-center mb-5">
                 {c.logoUrl ? (
-                  <Image
-                    src={c.logoUrl}
-                    alt={c.name}
-                    width={140}
-                    height={60}
-                    className="max-h-14 w-auto object-contain mx-auto grayscale group-hover:grayscale-0 transition-all duration-300"
-                    unoptimized
-                  />
+                  <div className={"darkLogoBg" in c && c.darkLogoBg ? "bg-[#1B1B1B] rounded-xl px-4 py-2 flex items-center justify-center" : ""}>
+                    <Image
+                      src={c.logoUrl}
+                      alt={c.name}
+                      width={140}
+                      height={60}
+                      className="max-h-14 w-auto object-contain mx-auto grayscale group-hover:grayscale-0 transition-all duration-300"
+                      unoptimized
+                    />
+                  </div>
                 ) : (
                   <div className="w-14 h-14 rounded-full bg-[#ED1A3B] flex items-center justify-center">
                     <span className="font-heading font-bold text-white text-base tracking-tight">
