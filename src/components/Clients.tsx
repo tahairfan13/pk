@@ -22,10 +22,10 @@ const clients = [
     service: "Mobile App",
   },
   {
-    name: "Go Petroleum",
+    name: "Times University",
     logoUrl: null,
-    industry: "Oil & Gas",
-    service: "Odoo ERP",
+    industry: "Education",
+    service: "Mobile App",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function Clients() {
             Trusted by Pakistan&apos;s Leading Brands
           </h2>
           <p className="text-[#939393] text-lg leading-relaxed">
-            From manufacturing and retail to oil &amp; gas, we&apos;ve delivered
+            From manufacturing and retail to education, we&apos;ve delivered
             ERP, mobile, and AI solutions for businesses that demand reliability.
           </p>
         </div>
@@ -73,20 +73,12 @@ export default function Clients() {
                     unoptimized
                   />
                 ) : (
-                  /* Fallback text logo for Go Petroleum */
                   <div className="flex flex-col items-center gap-1">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-8 h-8 rounded-full bg-[#ED1A3B] flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4">
-                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                        </svg>
-                      </div>
-                      <span className="font-heading font-bold text-xl text-[#1B1B1B] tracking-tight">
-                        GO
-                      </span>
+                    <div className="w-10 h-10 rounded-full bg-[#ED1A3B] flex items-center justify-center mb-1">
+                      <span className="font-heading font-bold text-white text-sm tracking-tight">TU</span>
                     </div>
                     <span className="text-[#939393] text-xs font-semibold uppercase tracking-widest">
-                      Petroleum
+                      Times University
                     </span>
                   </div>
                 )}
