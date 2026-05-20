@@ -9,10 +9,16 @@ const clients = [
     service: "Odoo ERP",
   },
   {
-    name: "Al-Khair Group",
-    logoUrl: "https://alkhairenterprises.pk/assets/img/al-logo.png",
-    industry: "Enterprises",
-    service: "AI Development",
+    name: "Etihad Town",
+    logoUrl: "https://etihadtown.com.pk/wp-content/uploads/2024/01/logo.png",
+    industry: "Real Estate",
+    service: "Odoo ERP",
+  },
+  {
+    name: "Riphah University",
+    logoUrl: "https://jrcrs.riphah.edu.pk/wp-content/uploads/2017/05/RIU-logo.png",
+    industry: "Education",
+    service: "Mobile App",
   },
   {
     name: "Logo Shoes",
@@ -69,7 +75,7 @@ export default function Clients() {
         </div>
 
         {/* Client cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
           {clients.map((c) => (
             <div
               key={c.name}
