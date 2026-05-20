@@ -13,6 +13,27 @@ const clients = [
     industry: "Real Estate",
   },
   {
+    name: "Logo Shoes",
+    logoUrl:
+      "https://www.logoofficial.com/cdn/shop/files/LOGO_blk.png?v=1715945255",
+    industry: "Retail & Fashion",
+  },
+  {
+    name: "Diamond Form",
+    logoUrl: "/diamond-logo.jpg",
+    industry: "Retail",
+  },
+  {
+    name: "Zafar Group",
+    logoUrl: "/zafar-group.jpg",
+    industry: "Catering & Events",
+  },
+  {
+    name: "TurkPlast",
+    logoUrl: "https://www.turkplast.info/admin/dist/tp-logo-removebg-preview.png",
+    industry: "Plastics & Manufacturing",
+  },
+  {
     name: "Multanust University",
     logoUrl: "https://framerusercontent.com/images/HnDLdDZjdAZMpkFdRte6nEPHg.png",
     industry: "Education",
@@ -23,37 +44,16 @@ const clients = [
     industry: "Construction",
   },
   {
-    name: "Diamond Form",
-    logoUrl: "/diamond-logo.jpg",
-    industry: "Retail",
-  },
-  {
-    name: "Logo Shoes",
-    logoUrl:
-      "https://www.logoofficial.com/cdn/shop/files/LOGO_blk.png?v=1715945255",
-    industry: "Retail & Fashion",
-  },
-  {
     name: "Times University",
     logoUrl: "https://www.tum.edu.pk/images/logo.png",
     darkLogoBg: true,
     industry: "Education",
   },
   {
-    name: "Zafar Group",
-    logoUrl: "/zafar-group.jpg",
-    industry: "Catering & Events",
-  },
-  {
     name: "Ravi Floor Mills",
     logoUrl: null,
     initials: "RF",
     industry: "Food & Agriculture",
-  },
-  {
-    name: "TurkPlast",
-    logoUrl: "https://www.turkplast.info/admin/dist/tp-logo-removebg-preview.png",
-    industry: "Plastics & Manufacturing",
   },
 ];
 
