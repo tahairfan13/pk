@@ -32,18 +32,15 @@ export default function ThankYouPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-[#1A1A1A] min-h-screen">
+      <main className="bg-[#F5F5F5] min-h-screen">
 
         {/* Hero */}
-        <section className="relative overflow-hidden pt-24 pb-20 px-4">
-          {/* Background glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-[#ED1A3B] opacity-[0.06] blur-[120px] pointer-events-none" />
-
-          <div className="relative max-w-2xl mx-auto text-center">
-            {/* Animated checkmark ring */}
+        <section className="py-24 px-4">
+          <div className="max-w-2xl mx-auto text-center">
+            {/* Checkmark */}
             <div className="relative w-24 h-24 mx-auto mb-8">
               <div className="absolute inset-0 rounded-full bg-[#ED1A3B]/10 animate-ping" style={{ animationDuration: "2.5s" }} />
-              <div className="relative w-24 h-24 rounded-full bg-[#ED1A3B]/15 border border-[#ED1A3B]/30 flex items-center justify-center">
+              <div className="relative w-24 h-24 rounded-full bg-white border-2 border-[#ED1A3B]/30 shadow-sm flex items-center justify-center">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ED1A3B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10">
                   <path d="M20 6L9 17l-5-5" />
                 </svg>
@@ -53,13 +50,13 @@ export default function ThankYouPage() {
             <span className="inline-block mb-4 text-[#ED1A3B] text-xs font-semibold uppercase tracking-widest">
               Message Received
             </span>
-            <h1 className="font-heading font-bold text-4xl sm:text-5xl text-white mb-5 leading-tight">
+            <h1 className="font-heading font-bold text-4xl sm:text-5xl text-[#1B1B1B] mb-5 leading-tight">
               You&apos;re in good hands.
             </h1>
-            <p className="text-white/50 text-lg leading-relaxed max-w-lg mx-auto mb-10">
-              Thank you for reaching out to Tecaudex. We&apos;ve received your details
-              and a senior team member will personally get back to you within
-              <span className="text-white font-medium"> 24 hours</span>.
+            <p className="text-[#939393] text-lg leading-relaxed max-w-lg mx-auto mb-10">
+              Thank you for reaching out to Tecaudex. A senior team member will
+              personally get back to you within{" "}
+              <span className="text-[#1B1B1B] font-semibold">24 hours</span>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -73,7 +70,7 @@ export default function ThankYouPage() {
               </a>
               <Link
                 href="/"
-                className="border border-white/15 hover:border-white/40 text-white/60 hover:text-white font-semibold px-7 py-3.5 rounded-full transition-colors text-sm"
+                className="border border-[#1B1B1B]/15 hover:border-[#ED1A3B] text-[#1B1B1B] hover:text-[#ED1A3B] font-semibold px-7 py-3.5 rounded-full transition-colors text-sm"
               >
                 Back to Home
               </Link>
@@ -82,21 +79,21 @@ export default function ThankYouPage() {
         </section>
 
         {/* What happens next */}
-        <section className="py-16 px-4 border-t border-white/8">
+        <section className="py-16 px-4 border-t border-[#E5E5E5]">
           <div className="max-w-4xl mx-auto">
-            <p className="text-center text-white/40 text-xs font-semibold uppercase tracking-widest mb-10">
+            <p className="text-center text-[#939393] text-xs font-semibold uppercase tracking-widest mb-10">
               What happens next
             </p>
             <div className="grid sm:grid-cols-3 gap-6">
               {nextSteps.map((s) => (
-                <div key={s.step} className="bg-white/[0.04] border border-white/8 rounded-2xl p-6">
+                <div key={s.step} className="bg-white border border-[#E5E5E5] rounded-2xl p-6 shadow-sm">
                   <span className="font-heading font-bold text-[#ED1A3B] text-3xl leading-none block mb-4">
                     {s.step}
                   </span>
-                  <h3 className="font-heading font-bold text-white text-sm mb-2">
+                  <h3 className="font-heading font-bold text-[#1B1B1B] text-sm mb-2">
                     {s.title}
                   </h3>
-                  <p className="text-white/40 text-sm leading-relaxed">{s.desc}</p>
+                  <p className="text-[#939393] text-sm leading-relaxed">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -104,29 +101,29 @@ export default function ThankYouPage() {
         </section>
 
         {/* Trust strip */}
-        <section className="py-12 px-4 border-t border-white/8">
-          <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-center">
+        <section className="py-12 px-4 border-t border-[#E5E5E5]">
+          <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-16 text-center">
             {[
               { value: "80+", label: "Projects delivered" },
               { value: "10+", label: "Countries served" },
               { value: "24h", label: "Response guarantee" },
             ].map((s) => (
               <div key={s.label}>
-                <p className="font-heading font-bold text-2xl text-white">{s.value}</p>
-                <p className="text-white/40 text-xs mt-0.5">{s.label}</p>
+                <p className="font-heading font-bold text-2xl text-[#1B1B1B]">{s.value}</p>
+                <p className="text-[#939393] text-xs mt-0.5">{s.label}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Logo */}
-        <section className="py-10 px-4 border-t border-white/8 text-center">
+        <section className="py-10 px-4 border-t border-[#E5E5E5] text-center">
           <Image
-            src="/tecaudex-logo-dark.svg"
+            src="/tecaudex-logo.svg"
             alt="Tecaudex"
-            width={130}
-            height={33}
-            className="mx-auto opacity-40"
+            width={120}
+            height={30}
+            className="mx-auto opacity-30"
           />
         </section>
 
