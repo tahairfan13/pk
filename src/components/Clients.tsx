@@ -47,6 +47,12 @@ const clients = [
     industry: "Food & Agriculture",
     service: "Odoo ERP",
   },
+  {
+    name: "TurkPlast",
+    logoUrl: "https://www.turkplast.info/admin/dist/tp-logo-removebg-preview.png",
+    industry: "Plastics & Manufacturing",
+    service: "Odoo ERP",
+  },
 ];
 
 const stats = [
@@ -69,8 +75,8 @@ export default function Clients() {
             Trusted by Pakistan&apos;s Leading Brands
           </h2>
           <p className="text-[#939393] text-lg leading-relaxed">
-            From manufacturing and retail to education, we&apos;ve delivered
-            ERP, mobile, and AI solutions for businesses that demand reliability.
+            A selection of prominent names from our portfolio — spanning manufacturing,
+            retail, education, real estate, and more.
           </p>
         </div>
 
