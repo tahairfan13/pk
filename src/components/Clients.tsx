@@ -29,8 +29,7 @@ const clients = [
   },
   {
     name: "Zafar Group",
-    logoUrl: null,
-    initials: "ZG",
+    logoUrl: "/zafar-group.jpg",
     industry: "Catering & Events",
     service: "Odoo ERP",
   },
