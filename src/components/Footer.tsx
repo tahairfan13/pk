@@ -50,9 +50,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <span className="font-heading font-bold text-lg block mb-4">Tecaudex</span>
-            <p className="text-[#939393] text-sm leading-relaxed max-w-xs mb-6">
+            <p className="text-[#939393] text-sm leading-relaxed mb-6">
               Pakistan&apos;s technology partner for Odoo ERP implementation, mobile
               app development, and AI solutions. Outcome-focused. Transparent.
               Reliable.
@@ -70,6 +70,30 @@ export default function Footer() {
                   {s.svg}
                 </a>
               ))}
+            </div>
+          </div>
+
+          {/* Offices */}
+          <div>
+            <p className="font-heading font-semibold text-sm mb-4 uppercase tracking-wider text-white/60">
+              Offices
+            </p>
+            <div className="flex flex-col gap-5">
+              <div>
+                <p className="text-white text-xs font-semibold mb-1">🇵🇰 Pakistan</p>
+                <p className="text-[#939393] text-sm leading-relaxed">
+                  2nd Floor, 7-B OPF,<br />
+                  Main Boulevard, Lahore,<br />
+                  Pakistan — 54770
+                </p>
+              </div>
+              <div>
+                <p className="text-white text-xs font-semibold mb-1">🇺🇸 United States</p>
+                <p className="text-[#939393] text-sm leading-relaxed">
+                  131 Continental Dr, Suite 305,<br />
+                  Newark, Delaware — 19713
+                </p>
+              </div>
             </div>
           </div>
 
@@ -114,7 +138,6 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[#939393] text-sm">
           <p>&copy; {new Date().getFullYear()} Tecaudex. All rights reserved.</p>
-          <p>Lahore, Pakistan</p>
         </div>
       </div>
     </footer>
