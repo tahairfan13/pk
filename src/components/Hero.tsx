@@ -28,7 +28,7 @@ export default function Hero() {
       await fetch(API, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, phone: `${countryCode} ${form.phone}`, message: "Quick enquiry from hero form" }),
+        body: JSON.stringify({ ...form, phone: `${countryCode} ${form.phone}`, message: form.service }),
       });
     } catch {}
     setLoading(false);

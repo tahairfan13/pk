@@ -13,8 +13,6 @@ export const countries = [
   { code: "+49",  flag: "🇩🇪", name: "Germany" },
   { code: "+90",  flag: "🇹🇷", name: "Turkey" },
   { code: "+86",  flag: "🇨🇳", name: "China" },
-  { code: "+91",  flag: "🇮🇳", name: "India" },
-  { code: "+880", flag: "🇧🇩", name: "Bangladesh" },
 ];
 
 interface Props {
