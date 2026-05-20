@@ -8,7 +8,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="bg-[#1A1A1A] border-b border-white/8">
+    <header className="sticky md:static top-0 z-50 bg-[#1A1A1A] border-b border-white/8">
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
         {/* Logo — inverted to white */}
         <a href="/" className="shrink-0">
